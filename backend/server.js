@@ -14,6 +14,7 @@ app.use(cors());
 
 //Routes
 app.use('/api/goals', require('./routes/goalRoutes'));
+app.use('/api/user', require('./routes/userRoutes'));
 
 // Set server port
 app.listen(port, () => console.log(`Server started on port ${port}`));
