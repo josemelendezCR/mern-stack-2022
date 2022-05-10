@@ -16,8 +16,8 @@ const createGoal = async (req, res) => {
     if(err) {
       console.log('Error creating goal', err);
       throw err;
-    }
-    res.status(200).send('Goal added');
+    }    
+    res.status(200).send({ id: result.insertId, text, user: req.user.id });
   });
 }
 
@@ -46,7 +46,7 @@ const  deleteGoal = async (req, res) => {
         console.log('Error deleting goal', err);
         throw err;
       }
-      res.status(200).send('Deleted successful');
+      res.status(200).send(id);
     });
   } catch(error) {
     console.log(error);

@@ -62,8 +62,34 @@ const getUser = (req, res) => {
   res.status(200).json({ id, name, email }); 
 }
 
+// const greaterPrimeNumber = (req, res) => {
+//   const { num } = req.params;
+//   let greaterPrime = 0;
+//   for(i = num; i > 1; i--) {
+//     if(isPrime(i) && greaterPrime === 0) {
+//       greaterPrime = +i;
+//       break;
+//     }
+//   }
+//   res.json({ greaterPrime })
+// };
+
+// function isPrime(n){
+//   if(n < 2) {
+//     return false;
+//   }
+
+//   for(let i = 2; i < n; i++) {
+//     if(n%i === 0) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
 module.exports = {
   registerUser,
   loginUser,
   getUser,
+  greaterPrimeNumber
 }
